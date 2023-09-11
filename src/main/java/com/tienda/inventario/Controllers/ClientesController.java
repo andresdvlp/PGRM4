@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/api/clientes")
 public class ClientesController {
@@ -25,5 +27,11 @@ public class ClientesController {
     @PostMapping
     public ResponseEntity<Boolean> createCliente(@RequestBody ClientesDTO clientesDTO) {
         return new ResponseEntity<Boolean>(service.createCliente(clientesDTO), HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Clientes>>getClientes(){
+        List<Clientes> clientesList=service.getAllClientes();
+        return ResponseEntity.ok(clientesList);
     }
 }

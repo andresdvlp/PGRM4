@@ -14,14 +14,11 @@ public class VentasDTO {
     private Date fechaVenta;
     private String descripcionVentas;
     private Clientes clientes;
-    private List<DetalleVenta> detalleVentaList;
-
-    public VentasDTO(int idVenta, Date fechaVenta, String descripcionVentas, Clientes clientes, List<DetalleVenta> detalleVentaList) {
+    public VentasDTO(int idVenta, Date fechaVenta, String descripcionVentas, Clientes clientes) {
         this.idVenta = idVenta;
         this.fechaVenta = fechaVenta;
         this.descripcionVentas = descripcionVentas;
         this.clientes = clientes;
-        this.detalleVentaList = detalleVentaList;
     }
     public VentasDTO() {
     }

@@ -1,9 +1,11 @@
 package com.tienda.inventario.Entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "detalleVenta")
+@Data
 public class DetalleVenta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,28 +16,4 @@ public class DetalleVenta {
     @ManyToOne
     @JoinColumn(name = "idVenta")
     private Ventas ventasDetalle;
-
-    public Short getIdDetalleVenta() {
-        return idDetalleVenta;
-    }
-
-    public void setIdDetalleVenta(Short idDetalleVenta) {
-        this.idDetalleVenta = idDetalleVenta;
-    }
-
-    public Productos getProductosDetalle() {
-        return productosDetalle;
-    }
-
-    public void setProductosDetalle(Productos productosDetalle) {
-        this.productosDetalle = productosDetalle;
-    }
-
-    public Ventas getVentasDetalle() {
-        return ventasDetalle;
-    }
-
-    public void setVentasDetalle(Ventas ventasDetalle) {
-        this.ventasDetalle = ventasDetalle;
-    }
 }

@@ -4,10 +4,11 @@ import com.tienda.inventario.Entities.Ventas;
 import com.tienda.inventario.ModelDTO.VentasDTO;
 import com.tienda.inventario.Repositories.VentaRepository;
 import com.tienda.inventario.Services.IVentasService;
-import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class VentasImpl implements IVentasService {
@@ -36,5 +37,9 @@ public class VentasImpl implements IVentasService {
             e.getMessage();
             return null;
         }
+    }
+    @Override
+    public List<Ventas> getAllVentas() {
+        return ventaRepository.findAll();
     }
 }

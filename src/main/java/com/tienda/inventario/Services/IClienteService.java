@@ -10,7 +10,6 @@ import java.util.Optional;
 public interface IClienteService {
     List<Clientes> getAllClientes();
     Clientes getClienteById(int Id);
-
     boolean createCliente(ClientesDTO clientesDTO);
     boolean deleteCliente(int id);
 }

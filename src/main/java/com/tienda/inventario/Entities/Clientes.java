@@ -1,13 +1,8 @@
 package com.tienda.inventario.Entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.antlr.v4.runtime.misc.NotNull;
 
-import java.util.List;
-import java.util.logging.Handler;
 
 @Entity
 @Table(name = "cliente")
@@ -28,7 +23,6 @@ public class Clientes {
         this.celularCliente = celularCliente;
         this.correoCliente = correoCliente;
     }
-
     public Clientes() {
     }
 }
