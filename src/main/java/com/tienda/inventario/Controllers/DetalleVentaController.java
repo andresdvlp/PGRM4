@@ -1,10 +1,7 @@
 package com.tienda.inventario.Controllers;
 
-import com.tienda.inventario.Entities.Clientes;
 import com.tienda.inventario.Entities.DetalleVenta;
-import com.tienda.inventario.ModelDTO.ClientesDTO;
 import com.tienda.inventario.ModelDTO.DetalleVentaDTO;
-import com.tienda.inventario.Services.IClienteService;
 import com.tienda.inventario.Services.IDetalleVentaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/detalleVenta")
+@CrossOrigin("*")
 public class DetalleVentaController {
     @Autowired
     private IDetalleVentaService service;

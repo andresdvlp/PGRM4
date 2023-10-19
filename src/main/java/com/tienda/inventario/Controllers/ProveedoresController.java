@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/proveedor")
+@CrossOrigin("*")
 public class ProveedoresController {
     @Autowired
     private IProveedoresService service;
