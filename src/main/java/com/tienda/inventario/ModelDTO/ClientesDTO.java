@@ -8,19 +8,21 @@ import java.util.List;
 
 @Data
 public class ClientesDTO {
-    private int idCliente;
+    private Long idCliente;
     private String nombreCliente;
     private String apellidoCliente;
     private int celularCliente;
     private String correoCliente;
+    private boolean deleted;
 
     public ClientesDTO() {
     }
-    public ClientesDTO(int idCliente, String nombreCliente, String apellidoCliente, int celularCliente, String correoCliente) {
+    public ClientesDTO(Long idCliente, String nombreCliente, String apellidoCliente, int celularCliente, String correoCliente, boolean deleted) {
         this.idCliente = idCliente;
         this.nombreCliente = nombreCliente;
         this.apellidoCliente = apellidoCliente;
         this.celularCliente = celularCliente;
         this.correoCliente = correoCliente;
+        this.deleted=deleted;
     }
 }

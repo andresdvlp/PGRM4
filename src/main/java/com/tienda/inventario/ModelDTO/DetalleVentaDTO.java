@@ -9,5 +9,6 @@ public class DetalleVentaDTO {
     private Productos productosDetalle;
 
     private Ventas ventasDetalle;
+    private boolean deleted;
 
 }

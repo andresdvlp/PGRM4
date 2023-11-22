@@ -13,5 +13,6 @@ public class ProductosDTO {
     private Double precioUnitario;
     private Short cantidadStock;
     private List<DetalleVenta> detallesVentaProducto;
+    private boolean deleted;
 
 }

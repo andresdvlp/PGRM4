@@ -5,7 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface ClienteRepository extends JpaRepository<Clientes, Integer> {
+import java.util.List;
+
+public interface ClienteRepository extends JpaRepository<Clientes, Long> {
     @Query(value = "select * from cliente where id_cliente =:idCliente",nativeQuery = true)
-    Clientes findByIdCliente(@Param("idCliente") int idCliente);
+    Clientes findByIdCliente(@Param("idCliente") Long idCliente);
+
+    List<Clientes> findByDeleted(Boolean deleted);
 }

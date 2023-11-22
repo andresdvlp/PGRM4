@@ -14,4 +14,5 @@ public class Productos {
     private String descripcion;
     private Double precioUnitario;
     private Short cantidadStock;
+    private boolean deleted;
 }

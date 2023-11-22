@@ -18,11 +18,11 @@ public class ClienteImpl implements IClienteService {
 
     @Override
     public List<Clientes> getAllClientes() {
-        return clienteRepository.findAll();
+        return clienteRepository.findByDeleted(false);
     }
 
     @Override
-    public Clientes getClienteById(int id) {
+    public Clientes getClienteById(Long id) {
         try {
             return clienteRepository.findByIdCliente(id);
         }catch (Exception e){
@@ -44,7 +44,7 @@ public class ClienteImpl implements IClienteService {
         return isCreated;
     }
     @Override
-    public boolean deleteCliente(int id) {
+    public boolean deleteCliente(Long id) {
         try {
             clienteRepository.deleteById(id);
             return true;
@@ -52,5 +52,15 @@ public class ClienteImpl implements IClienteService {
             ex.getMessage();
             return false;
         }
+    }
+    @Override
+    public boolean logicDelete(Long id) {
+        Clientes clientes = clienteRepository.findById(id).orElse(null);
+        if (clientes != null) {
+            clientes.setDeleted(true);
+            clienteRepository.save(clientes);
+            return true;
+        }
+        return false;
     }
 }

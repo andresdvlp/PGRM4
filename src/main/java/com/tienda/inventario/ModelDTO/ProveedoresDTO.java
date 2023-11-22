@@ -9,4 +9,5 @@ public class ProveedoresDTO {
     private String nombreProveedor;
     private String direccionProveedor;
     private String celularProveedor;
+    private boolean deleted;
 }

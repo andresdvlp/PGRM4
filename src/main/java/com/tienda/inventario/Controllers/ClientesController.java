@@ -20,9 +20,13 @@ public class ClientesController {
     private IClienteService service;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Clientes> getClienteById(@PathVariable int id) {
+    public ResponseEntity<Clientes> getClienteById(@PathVariable Long id) {
         Clientes cliente= service.getClienteById(id);
         return new ResponseEntity<Clientes>(cliente,HttpStatus.OK);
+    }
+    @GetMapping("/login/{id}")
+    public ResponseEntity<Clientes> login(Long id, String password){
+        
     }
 
     @PostMapping
@@ -35,4 +39,14 @@ public class ClientesController {
         List<Clientes> clientesList=service.getAllClientes();
         return ResponseEntity.ok(clientesList);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> logicDelete(@PathVariable Long id) {
+        boolean deleted = service.logicDelete(id);
+        if (deleted){
+            return ResponseEntity.ok().build();
+        }else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

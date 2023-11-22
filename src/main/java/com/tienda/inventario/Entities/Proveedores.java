@@ -14,6 +14,7 @@ public class Proveedores {
     private String nombreProveedor;
     private String direccionProveedor;
     private String celularProveedor;
+    private boolean deleted;
 
     public Proveedores() {
     }

@@ -10,18 +10,23 @@ import lombok.Data;
 public class Clientes {
 
     @Id
-    private int idCliente;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long idCliente;
+    private String password;
     private String nombreCliente;
     private String apellidoCliente;
     private int celularCliente;
     private String correoCliente;
+    private boolean deleted;
 
-    public Clientes(int idCliente, String nombreCliente, String apellidoCliente, int celularCliente, String correoCliente) {
+    public Clientes(Long idCliente, String password, String nombreCliente, String apellidoCliente, int celularCliente, String correoCliente, boolean deleted) {
         this.idCliente = idCliente;
+        this.password=password;
         this.nombreCliente = nombreCliente;
         this.apellidoCliente = apellidoCliente;
         this.celularCliente = celularCliente;
         this.correoCliente = correoCliente;
+        this.deleted=deleted;
     }
     public Clientes() {
     }

@@ -14,11 +14,13 @@ public class VentasDTO {
     private Date fechaVenta;
     private String descripcionVentas;
     private Clientes clientes;
-    public VentasDTO(int idVenta, Date fechaVenta, String descripcionVentas, Clientes clientes) {
+    private boolean deleted;
+    public VentasDTO(int idVenta, Date fechaVenta, String descripcionVentas, Clientes clientes, boolean deleted) {
         this.idVenta = idVenta;
         this.fechaVenta = fechaVenta;
         this.descripcionVentas = descripcionVentas;
         this.clientes = clientes;
+        this.deleted=deleted;
     }
     public VentasDTO() {
     }

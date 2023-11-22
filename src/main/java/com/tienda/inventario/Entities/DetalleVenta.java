@@ -16,4 +16,5 @@ public class DetalleVenta {
     @ManyToOne
     @JoinColumn(name = "idVenta")
     private Ventas ventasDetalle;
+    private boolean deleted;
 }
