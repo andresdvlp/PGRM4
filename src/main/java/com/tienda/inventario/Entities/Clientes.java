@@ -15,11 +15,11 @@ public class Clientes {
     private String password;
     private String nombreCliente;
     private String apellidoCliente;
-    private int celularCliente;
+    private Long celularCliente;
     private String correoCliente;
     private boolean deleted;
 
-    public Clientes(Long idCliente, String password, String nombreCliente, String apellidoCliente, int celularCliente, String correoCliente, boolean deleted) {
+    public Clientes(Long idCliente, String password, String nombreCliente, String apellidoCliente, Long celularCliente, String correoCliente, boolean deleted) {
         this.idCliente = idCliente;
         this.password=password;
         this.nombreCliente = nombreCliente;

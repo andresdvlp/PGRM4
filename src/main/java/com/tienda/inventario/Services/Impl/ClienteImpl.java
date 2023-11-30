@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClienteImpl implements IClienteService {
@@ -60,6 +61,16 @@ public class ClienteImpl implements IClienteService {
             clientes.setDeleted(true);
             clienteRepository.save(clientes);
             return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean autenticar(Long celularCliente, String password) {
+        Optional<Clientes> optionalClientes = clienteRepository.findByCelularCliente(celularCliente);
+        if(optionalClientes.isPresent()){
+            Clientes clientes =optionalClientes.get();
+            return clientes.getPassword().equals(password);
         }
         return false;
     }

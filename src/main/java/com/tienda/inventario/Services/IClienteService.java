@@ -11,4 +11,5 @@ public interface IClienteService {
     boolean createCliente(ClientesDTO clientesDTO);
     boolean deleteCliente(Long id);
     boolean logicDelete(Long id);
+    boolean autenticar(Long celularCliente, String password);
 }

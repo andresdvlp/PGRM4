@@ -3,6 +3,7 @@ package com.tienda.inventario.Controllers;
 import com.tienda.inventario.Entities.Clientes;
 import com.tienda.inventario.ModelDTO.ClientesDTO;
 import com.tienda.inventario.Services.IClienteService;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,9 +25,13 @@ public class ClientesController {
         Clientes cliente= service.getClienteById(id);
         return new ResponseEntity<Clientes>(cliente,HttpStatus.OK);
     }
-    @GetMapping("/login/{id}")
-    public ResponseEntity<Clientes> login(Long id, String password){
-        
+    @PostMapping("/login")
+    public ResponseEntity<String> login (@RequestParam Long celularCliente, @RequestParam String password){
+        if(service.autenticar(celularCliente, password)){
+            return ResponseEntity.ok("Login Exitoso");
+        }else{
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales Incorrectas");
+        }
     }
 
     @PostMapping

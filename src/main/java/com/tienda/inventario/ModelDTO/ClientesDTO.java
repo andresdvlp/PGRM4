@@ -11,18 +11,21 @@ public class ClientesDTO {
     private Long idCliente;
     private String nombreCliente;
     private String apellidoCliente;
-    private int celularCliente;
+    private Long celularCliente;
     private String correoCliente;
+    private String password;
     private boolean deleted;
 
     public ClientesDTO() {
     }
-    public ClientesDTO(Long idCliente, String nombreCliente, String apellidoCliente, int celularCliente, String correoCliente, boolean deleted) {
+
+    public ClientesDTO(Long idCliente, String nombreCliente, String apellidoCliente, Long celularCliente, String correoCliente, String password, boolean deleted) {
         this.idCliente = idCliente;
         this.nombreCliente = nombreCliente;
         this.apellidoCliente = apellidoCliente;
         this.celularCliente = celularCliente;
         this.correoCliente = correoCliente;
-        this.deleted=deleted;
+        this.password = password;
+        this.deleted = deleted;
     }
 }
